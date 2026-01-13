@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendix - RoASt Documentation</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Shared Assets -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <script src="../scripts/common.js"></script>
+</head>
+<body class="bg-background text-foreground antialiased min-h-screen flex">
+
+    <button id="mobile-menu-btn" class="fixed top-4 left-4 z-50 p-2 rounded-md bg-card border border-border shadow-sm md:hidden">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+    </button>
+    <div id="mobile-overlay" class="fixed inset-0 bg-foreground/20 backdrop-filter backdrop-blur-sm z-40 hidden md:hidden"></div>
+
+    <aside id="sidebar" class="fixed top-0 left-0 z-50 h-full w-64 bg-sidebar border-r border-sidebar-border transform -translate-x-full transition-transform duration-200 ease-in-out md:translate-x-0 md:static flex flex-col">
+        <div class="p-4 border-b border-sidebar-border">
+            <div class="flex items-center justify-between">
+                <a href="overview.html" class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+                        <span class="text-primary-foreground font-bold text-sm">R</span>
+                    </div>
+                    <span class="font-bold text-lg text-sidebar-foreground">RoASt</span>
+                </a>
+                <button id="close-menu-btn" class="p-1 rounded-md hover:bg-nav-hover md:hidden">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <p class="text-xs text-muted-foreground mt-1">Robot Algorithm Synthesizer</p>
+        </div>
+
+        <nav id="doc-nav" class="flex-1 p-4 space-y-1 overflow-y-auto scrollbar-thin"><!-- Populated by menu.js --></nav>
+
+        <div class="p-4 border-t border-sidebar-border">
+            <a href="https://github.com/luminousrobots/RoASt" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>View on GitHub</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="flex-1 md:pl-0 w-full overflow-y-auto">
+        <div class="max-w-4xl mx-auto px-6 py-8 md:py-12 md:pl-8">
+            <article class="prose max-w-none text-foreground leading-relaxed">
+                
+                <h1 class="text-3xl md:text-4xl font-bold mb-6 text-foreground">Appendix</h1>
+                <p class="mb-4 text-foreground/90">
+                    All GitHub repository references from the research paper, organized by section.
+                </p>
+
+                <h2 class="text-2xl font-semibold mt-10 mb-4 text-foreground border-b border-border pb-2">Repository References</h2>
+                
+                <ul class="space-y-3 mb-8">
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section I.A, p.2:</strong> <a href="https://github.com/luminousrobots/RoASt" class="text-accent hover:underline" target="_blank">tool code</a>
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section II.e, p.4:</strong> <a href="https://luminousrobots.github.io/RoASt-Docs/tr.pdf" class="text-accent hover:underline" target="_blank">technical report</a>, section II.A
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV, p.6:</strong> <a href="https://github.com/luminousrobots/RoASt" class="text-accent hover:underline" target="_blank">tool code</a>
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV, p.6:</strong> <a href="https://luminousrobots.github.io/RoASt-Docs/tr.pdf" class="text-accent hover:underline" target="_blank">technical report</a>, sections II.B and II.C
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV.A, p.7:</strong> base goals for Algos 1 and 2 (<a href="executions.html#exec1" class="text-accent hover:underline">execution 1</a> and <a href="executions.html#exec3" class="text-accent hover:underline">3</a>)
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV.B, p.7:</strong> results <a href="executions.html#exec4" class="text-accent hover:underline">execution 4</a>
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV.C, p.8:</strong> <a href="https://luminousrobots.github.io/RoASt-Docs/tr.pdf" class="text-accent hover:underline" target="_blank">technical report</a>, section III
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV.C, p.8:</strong> simulations of generated algos for Algo 1 (<a href="executions.html#exec1" class="text-accent hover:underline">execution 1</a>)
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV.C, p.8:</strong> simulations of generated algos for Algo 2 (<a href="executions.html#exec3" class="text-accent hover:underline">execution 3</a>)
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV.D, p.8:</strong> <a href="https://luminousrobots.github.io/RoASt-Docs/tr.pdf" class="text-accent hover:underline" target="_blank">technical report</a>, section I
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV.E, p.9:</strong> classification for Algos 1 and 2 (<a href="executions.html#exec1" class="text-accent hover:underline">executions 1</a> and <a href="executions.html#exec3" class="text-accent hover:underline">3</a>)
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV.E, p.9:</strong> animation generated Algos 3 and 5 on experiment 3 (<a href="executions.html#exec3" class="text-accent hover:underline">execution 3</a>)
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV.E, p.9:</strong> animation generated Algos 3, 31 and 576 on experiment 4 (<a href="executions.html#exec3" class="text-accent hover:underline">execution 3</a>)
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV.E, p.9:</strong> animation generated Algos 3 and 26 on experiment 0 (<a href="executions.html#exec3" class="text-accent hover:underline">execution 3</a>)
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV.F.a, p.10:</strong> results <a href="executions.html#exec2" class="text-accent hover:underline">execution 2</a>
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV.F.b, p.10:</strong> results (<a href="executions.html#exec10" class="text-accent hover:underline">execution 10</a>)
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV.F.b, p.10:</strong> results <a href="executions.html#exec5" class="text-accent hover:underline">execution 5</a>
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV.F.c, p.10:</strong> results <a href="executions.html#exec6" class="text-accent hover:underline">execution 6</a>
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV.F.c, p.10:</strong> results <a href="executions.html#exec7" class="text-accent hover:underline">execution 7</a>
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV.F.c, p.11:</strong> animation generated Algo 188 on experiment 26 (<a href="executions.html#exec7" class="text-accent hover:underline">execution 7</a>)
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section IV.F.c, p.11:</strong> results <a href="executions.html#exec8" class="text-accent hover:underline">execution 8</a>
+                    </li>
+                    <li class="text-foreground/90">
+                        <strong class="font-semibold text-foreground">Section V, p.11:</strong> results <a href="executions.html#exec9" class="text-accent hover:underline">execution 9</a>
+                    </li>
+                </ul>
+
+            </article>
+        </div>
+    </main>
+
+    <script src="../scripts/menu.js"></script>
+    <script>
+        loadNavigationMenu('appendix');
+    </script>
+</body>
+</html>

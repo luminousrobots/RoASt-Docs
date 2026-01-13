@@ -1,0 +1,93 @@
+:root {
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+    --primary: 210 60% 25%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 15% 92%;
+    --secondary-foreground: 215 25% 15%;
+    --muted: 210 15% 95%;
+    --muted-foreground: 215 15% 45%;
+    --accent: 175 70% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 175 70% 40%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 215 25% 25%;
+    --sidebar-primary: 210 60% 25%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 15% 95%;
+    --sidebar-accent-foreground: 215 25% 15%;
+    --sidebar-border: 210 20% 92%;
+    --sidebar-ring: 175 70% 40%;
+    
+    --nav-hover: 210 15% 95%;
+    --nav-active: 175 70% 95%;
+    --nav-active-border: 175 70% 40%;
+}
+
+.dark {
+    --background: 215 25% 10%;
+    --foreground: 210 20% 92%;
+    --card: 215 25% 13%;
+    --card-foreground: 210 20% 92%;
+    --popover: 215 25% 13%;
+    --popover-foreground: 210 20% 92%;
+    --primary: 175 70% 50%;
+    --primary-foreground: 215 25% 10%;
+    --secondary: 215 20% 18%;
+    --secondary-foreground: 210 20% 92%;
+    --muted: 215 20% 18%;
+    --muted-foreground: 210 15% 60%;
+    --accent: 175 70% 45%;
+    --accent-foreground: 215 25% 10%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 20% 20%;
+    --input: 215 20% 20%;
+    --ring: 175 70% 45%;
+    --sidebar-background: 215 25% 12%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 175 70% 50%;
+    --sidebar-primary-foreground: 215 25% 10%;
+    --sidebar-accent: 215 20% 18%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 215 20% 18%;
+    --sidebar-ring: 175 70% 45%;
+    --nav-hover: 215 20% 15%;
+    --nav-active: 175 70% 15%;
+}
+
+body {
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Sans 3', sans-serif;
+    letter-spacing: -0.025em;
+}
+
+code {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+}
+
+.prose-docs h1 {
+    @apply text-3xl md:text-4xl font-bold mb-6 text-foreground;
+}
+
+/* Custom Utilities */
+.glass-effect {
+    backdrop-filter: blur(8px);
+}
