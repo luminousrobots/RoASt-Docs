@@ -77,13 +77,24 @@ cd RoASt</code></pre>
                 <!-- 2: Configuration -->
                 <h2 class="text-2xl font-semibold mt-10 mb-4 text-foreground border-b border-border pb-2">2. Configuration</h2>
                 
-                <p class="mb-4 text-foreground/90">Use the online Configuration Wizard:</p>
+                <div class="w-full rounded-lg border border-l-4 p-4 mb-4 bg-teal-50 border-teal-500/50 text-teal-900 border-l-teal-500 dark:bg-teal-950/30 dark:text-teal-200">
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="info" class="w-5 h-5 mt-0.5 shrink-0"></i>
+                        <div class="text-sm">
+                            <p class="font-medium text-base mb-1">Default Configuration Available</p>
+                            <p>A default <code class="px-1.5 py-0.5 rounded bg-teal-100 dark:bg-teal-900 font-mono text-sm">config.json</code> is already included in the project (<a href="https://luminousrobots.github.io/RoASt-Configuration-Wizard/?preset=0&edit=true" target="_blank" rel="noopener noreferrer" class="text-teal-700 dark:text-teal-300 hover:underline font-medium"><strong>Exec1 | Algo1 | Pole | Goals1 | Main</strong> config</a>). You can skip this step and proceed directly to execution.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="mb-4 text-foreground/90">If you want to customize the configuration, use the online Configuration Wizard:</p>
                 <p class="mb-4 text-foreground/90">
                     <a href="https://luminousrobots.github.io/RoASt-Configuration-Wizard/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline font-medium">Configuration Wizard →</a>
                 </p>
                 <p class="mb-4 text-foreground/90">
-                    Follow the instructions in the wizard to set your parameters, then download the generated <code class="px-1.5 py-0.5 rounded bg-muted font-mono text-sm">config.json</code> file and place it in the RoASt project folder.
+                    The wizard includes execution presets that you can choose from and modify. Follow the instructions to adjust your parameters, then download the generated <code class="px-1.5 py-0.5 rounded bg-muted font-mono text-sm">config.json</code> file and replace the existing one in the RoASt project folder.
                 </p>
+                
                 <p class="mb-4 text-foreground/90">
                     View pre-configured execution presets on the <a href="executions.html" class="text-accent hover:underline font-medium">Executions</a> page.
                 </p>
