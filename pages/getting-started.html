@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started - RoASt Documentation</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Shared Assets -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <script src="../scripts/common.js"></script>
+</head>
+<body class="bg-background text-foreground antialiased min-h-screen flex">
+
+    <button id="mobile-menu-btn" class="fixed top-4 left-4 z-50 p-2 rounded-md bg-card border border-border shadow-sm md:hidden">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+    </button>
+    <div id="mobile-overlay" class="fixed inset-0 bg-foreground/20 backdrop-filter backdrop-blur-sm z-40 hidden md:hidden"></div>
+
+    <aside id="sidebar" class="fixed top-0 left-0 z-50 h-full w-64 bg-sidebar border-r border-sidebar-border transform -translate-x-full transition-transform duration-200 ease-in-out md:translate-x-0 md:static flex flex-col">
+        <div class="p-4 border-b border-sidebar-border">
+            <div class="flex items-center justify-between">
+                <a href="overview.html" class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+                        <span class="text-primary-foreground font-bold text-sm">R</span>
+                    </div>
+                    <span class="font-bold text-lg text-sidebar-foreground">RoASt</span>
+                </a>
+                <button id="close-menu-btn" class="p-1 rounded-md hover:bg-nav-hover md:hidden">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <p class="text-xs text-muted-foreground mt-1">Robot Algorithm Synthesizer</p>
+        </div>
+
+        <nav id="doc-nav" class="flex-1 p-4 space-y-1 overflow-y-auto scrollbar-thin"><!-- Populated by menu.js --></nav>
+
+        <div class="p-4 border-t border-sidebar-border">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>View on GitHub</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="flex-1 md:pl-0 w-full overflow-y-auto">
+        <div class="max-w-4xl mx-auto px-6 py-8 md:py-12 md:pl-8">
+            <article class="prose max-w-none text-foreground leading-relaxed">
+                
+                <h1 class="text-3xl md:text-4xl font-bold mb-6 text-foreground">Getting Started</h1>
+                <p class="mb-8 text-foreground/90">
+                    Complete guide to installing RoASt, configuring executions, and running your first synthesis.
+                </p>
+
+                <!-- 1: Installation -->
+                <h2 class="text-2xl font-semibold mt-10 mb-4 text-foreground border-b border-border pb-2">1. Installation</h2>
+                
+                <p class="mb-4 text-foreground/90">
+                    Install Rust using the official instructions:<br>
+                    <a href="https://rust-lang.org/tools/install" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline font-medium">https://rust-lang.org/tools/install</a>
+                </p>
+                <p class="mb-4 text-foreground/90">This project uses <strong>Rust 1.83.0</strong> or later.</p>
+
+                <div class="rounded-lg border border-border bg-slate-900 p-4 mb-6 overflow-x-auto shadow-lg">
+                    <pre class="font-mono text-sm text-slate-100"><code class="language-bash"># Clone the repository
+git clone https://github.com/luminousrobots/RoASt.git
+cd RoASt</code></pre>
+                </div>
+
+                <!-- 2: Configuration -->
+                <h2 class="text-2xl font-semibold mt-10 mb-4 text-foreground border-b border-border pb-2">2. Configuration</h2>
+                
+                <div class="w-full rounded-lg border border-l-4 p-4 mb-4 bg-teal-50 border-teal-500/50 text-teal-900 border-l-teal-500 dark:bg-teal-950/30 dark:text-teal-200">
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="info" class="w-5 h-5 mt-0.5 shrink-0"></i>
+                        <div class="text-sm">
+                            <p class="font-medium text-base mb-1">Default Configuration Available</p>
+                            <p>A default <code class="px-1.5 py-0.5 rounded bg-teal-100 dark:bg-teal-900 font-mono text-sm">config.json</code> is already included in the project (<a href="https://luminousrobots.github.io/RoASt-Configuration-Wizard/?preset=0&edit=true" target="_blank" rel="noopener noreferrer" class="text-teal-700 dark:text-teal-300 hover:underline font-medium"><strong>Exec1 | Algo1 | Pole | Goals1 | Main</strong> config</a>). You can skip this step and proceed directly to execution.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="mb-4 text-foreground/90">If you want to customize the configuration, use the online Configuration Wizard:</p>
+                <p class="mb-4 text-foreground/90">
+                    <a href="https://luminousrobots.github.io/RoASt-Configuration-Wizard/" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline font-medium">Configuration Wizard →</a>
+                </p>
+                <p class="mb-4 text-foreground/90">
+                    The wizard includes execution presets that you can choose from and modify. Follow the instructions to adjust your parameters, then download the generated <code class="px-1.5 py-0.5 rounded bg-muted font-mono text-sm">config.json</code> file and replace the existing one in the RoASt project folder.
+                </p>
+                
+                <p class="mb-4 text-foreground/90">
+                    View pre-configured execution presets on the <a href="executions.html" class="text-accent hover:underline font-medium">Executions</a> page.
+                </p>
+
+                <!-- 3: Execution -->
+                <h2 class="text-2xl font-semibold mt-10 mb-4 text-foreground border-b border-border pb-2">3. Execution</h2>
+                
+                <p class="mb-4 text-foreground/90">Run RoASt:</p>
+                <div class="rounded-lg border border-border bg-slate-900 p-4 mb-4 overflow-x-auto shadow-lg">
+                    <pre class="font-mono text-sm text-slate-100"><code class="language-bash">cargo run --release</code></pre>
+                </div>
+
+                <p class="mb-4 text-foreground/90">You'll see progress logs:</p>
+                <div class="rounded-lg border border-border bg-slate-900 p-4 mb-4 overflow-x-auto shadow-lg">
+                    <pre class="font-mono text-sm text-slate-100"><code class="language-plaintext">user@PC:~/RoASt$ cargo rel
+   Compiling RoAst v0.1.0 (/home/user/RoASt)
+    Finished `release` profile [optimized + debuginfo] target(s) in 0.03s
+     Running `target/release/RoAst`
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                           CONFIGURATION DISPLAY                           ║
+╚══════════════════════════════════════════════════════════════════════════════╝</code></pre>
+                </div>
+
+                <p class="mb-4 text-foreground/90">Results are saved in timestamped folders:</p>
+                <div class="rounded-lg border border-border bg-slate-900 p-4 mb-4 overflow-x-auto shadow-lg">
+                    <pre class="font-mono text-sm text-slate-100"><code class="language-plaintext">results/Execution_YYYY-MM-DD_HH-MM-SS/</code></pre>
+                </div>
+
+                <p class="mb-4 text-foreground/90">
+                    See the <a href="results.html" class="text-accent hover:underline font-medium">Results Guide</a> to understand the output structure and viewers.
+                </p>
+
+                <!-- 4: Advanced -->
+                <h2 class="text-2xl font-semibold mt-10 mb-4 text-foreground border-b border-border pb-2">4. Advanced</h2>
+
+                <p class="mb-4 text-foreground/90">
+                    RoASt provides additional command line options for caching, classification, validation, and more. Run <code class="px-1.5 py-0.5 rounded bg-muted font-mono text-sm">cargo run --release -- --help</code> to see all available options.
+                </p>
+
+                <div class="w-full rounded-lg border border-l-4 p-4 mb-8 bg-teal-50 border-teal-500/50 text-teal-900 border-l-teal-500 dark:bg-teal-950/30 dark:text-teal-200">
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="lightbulb" class="w-5 h-5 mt-0.5 shrink-0"></i>
+                        <div class="text-sm">
+                            <p class="font-medium text-base mb-1">Next Steps</p>
+                            <p>Explore the <a href="results.html" class="text-teal-700 dark:text-teal-300 hover:underline font-medium">Results Guide</a> to understand execution outputs and viewers.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </article>
+        </div>
+    </main>
+
+    <script src="../scripts/menu.js"></script>
+    <script>
+        loadNavigationMenu('getting-started');
+    </script>
+</body>
+</html>

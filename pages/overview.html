@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoASt Documentation</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Shared Assets -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <script src="../scripts/common.js"></script>
+</head>
+
+<body class="bg-background text-foreground antialiased min-h-screen flex">
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn"
+        class="fixed top-4 left-4 z-50 p-2 rounded-md bg-card border border-border shadow-sm md:hidden">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+    </button>
+
+    <!-- Mobile Overlay -->
+    <div id="mobile-overlay"
+        class="fixed inset-0 bg-foreground/20 backdrop-filter backdrop-blur-sm z-40 hidden md:hidden"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar"
+        class="fixed top-0 left-0 z-50 h-full w-64 bg-sidebar border-r border-sidebar-border transform -translate-x-full transition-transform duration-200 ease-in-out md:translate-x-0 md:static flex flex-col">
+        <!-- Logo -->
+        <div class="p-4 border-b border-sidebar-border">
+            <div class="flex items-center justify-between">
+                <a href="overview.html" class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+                        <span class="text-primary-foreground font-bold text-sm">R</span>
+                    </div>
+                    <span class="font-bold text-lg text-sidebar-foreground">RoASt</span>
+                </a>
+                <button id="close-menu-btn" class="p-1 rounded-md hover:bg-nav-hover md:hidden">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <p class="text-xs text-muted-foreground mt-1">Robot Algorithm Synthesizer</p>
+        </div>
+
+        <!-- Navigation -->
+        <nav id="doc-nav" class="flex-1 p-4 space-y-1 overflow-y-auto scrollbar-thin">
+            <!-- Populated by menu.js -->
+        </nav>
+
+        <!-- Footer -->
+        <div class="p-4 border-t border-sidebar-border">
+            <a href="https://github.com/luminousrobots/RoASt" target="_blank" rel="noopener noreferrer"
+                class="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>View on GitHub</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 md:pl-0 w-full overflow-y-auto">
+        <div class="max-w-4xl mx-auto px-6 py-8 md:py-12 md:pl-8">
+            <article class="prose max-w-none text-foreground leading-relaxed">
+
+                <!-- Hero -->
+                <div class="mb-12">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="px-3 py-1 text-xs font-medium rounded-full bg-accent/10 text-accent">v1.0.0</span>
+                        <span class="text-muted-foreground text-sm">Open Source Research Tool</span>
+                    </div>
+                    <h1
+                        class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                        RoASt Documentation
+                    </h1>
+                    <p class="text-xl text-muted-foreground mb-6">
+                        Robot Algorithm Synthesizer Tool: A proof-of-concept research tool for synthesizing algorithms
+                        that solve perpetual grid exploration with obstacles using luminous myopic robots.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="getting-started.html"
+                            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity">
+                            Get Started
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="https://github.com/luminousrobots/RoASt" target="_blank"
+                            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-secondary text-secondary-foreground font-medium hover:bg-secondary/80 transition-colors">
+                            <i data-lucide="github" class="w-4 h-4"></i>
+                            View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="w-full rounded-lg border border-l-4 p-4 mb-8 bg-emerald-50 border-emerald-500/50 text-emerald-900 border-l-emerald-500 dark:bg-emerald-950/30 dark:text-emerald-200">
+                    <div class="flex items-start gap-3">
+                        <i data-lucide="file-text" class="w-5 h-5 mt-0.5 shrink-0"></i>
+                        <div class="text-sm">
+                            <p class="font-medium text-base mb-1">
+                                Synthesizing Algorithm Extensions for Grid Perpetual Exploration with an Obstacle
+                                <span class="text-sm opacity-90 font-normal ml-2">(Technical Report)</span>
+                            </p>
+                            <p class="text-sm opacity-90">This document provides <strong>Proofs of Perpetual
+                                    Exploration</strong> and <strong>Impossibility Results</strong> for the current
+                                executions of Algorithm 1 and Algorithm 2.</p>
+                            <a href="https://luminousrobots.github.io/RoASt-Docs/tr.pdf" target="_blank"
+                                class="inline-block mt-3 px-3 py-1.5 bg-emerald-100 text-emerald-800 rounded-md text-xs font-semibold hover:bg-emerald-200 dark:bg-emerald-900 dark:text-emerald-100 transition-colors">
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What is RoASt -->
+                <h2 class="text-2xl font-semibold mt-10 mb-4 text-foreground border-b border-border pb-2">What is RoASt?
+                </h2>
+                <p class="mb-4 text-foreground/90">
+                    RoASt (Robot Algorithm Synthesizer Tool) is a proof-of-concept research tool that implements a
+                    partly automated method to synthesize algorithms solving the perpetual exploration of finite grids
+                    containing obstacles using luminous myopic robots with common chirality in the fully-synchronous
+                    Look-Compute-Move model.
+                </p>
+                <p class="mb-4 text-foreground/90">
+                    The tool generates algorithms and verifies them by simulation on small grids. Results are presented
+                    through interactive HTML viewers with comprehensive classification into behavioral families.
+                </p>
+
+                <!-- Repository References -->
+                <h2 class="text-2xl font-semibold mt-10 mb-4 text-foreground border-b border-border pb-2">
+                    References from the Research Paper
+                </h2>
+                <p class="mb-6 text-foreground/90">
+                    GitHub repositories, technical reports, and execution viewers cited in the paper, grouped by paper
+                    section.
+                </p>
+
+                <div class="space-y-6 mb-10">
+
+                    <!-- Section I -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-foreground mb-2">Section I</h3>
+                        <ul class="list-disc list-inside space-y-2 text-foreground/90">
+                            <li><strong>I.A (p.2):</strong> <a href="https://github.com/luminousrobots/RoASt"
+                                    target="_blank" class="text-accent hover:underline">Tool source code</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Section II -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-foreground mb-2">Section II</h3>
+                        <ul class="list-disc list-inside space-y-2 text-foreground/90">
+                            <li><strong>II.E (p.4):</strong> <a
+                                    href="https://luminousrobots.github.io/RoASt-Docs/tr.pdf" target="_blank"
+                                    class="text-accent hover:underline">Technical report</a> (Section II.A)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Section IV -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-foreground mb-2">Section IV</h3>
+                        <ul class="list-disc list-inside space-y-2 text-foreground/90">
+                            <li><strong>IV (p.6):</strong> <a href="https://github.com/luminousrobots/RoASt"
+                                    target="_blank" class="text-accent hover:underline">Tool source code</a></li>
+                            <li><strong>IV (p.6):</strong> <a href="https://luminousrobots.github.io/RoASt-Docs/tr.pdf"
+                                    target="_blank" class="text-accent hover:underline">Technical report</a> (Sections
+                                II.B, II.C)</li>
+
+                            <li><strong>IV.A (p.7):</strong> Base goals for Algos 1 &amp; 2: <a
+                                    href="executions.html#exec1" class="text-accent hover:underline">Execution 1</a>, <a
+                                    href="executions.html#exec3" class="text-accent hover:underline">Execution 3</a>
+                            </li>
+                            <li><strong>IV.B (p.7):</strong> Results: <a href="executions.html#exec4"
+                                    class="text-accent hover:underline">Execution 4</a></li>
+
+                            <li><strong>IV.C (p.8):</strong> <a
+                                    href="https://luminousrobots.github.io/RoASt-Docs/tr.pdf" target="_blank"
+                                    class="text-accent hover:underline">Technical report</a> (Section III)</li>
+                            <li><strong>IV.C (p.8):</strong> Generated algos (Algo 1): <a
+                                    href="https://luminousrobots.github.io/RoASt-Executions/Exec1_Algo1_Pole_Goals1_Main/viewer.html"
+                                    target="_blank" class="text-accent hover:underline">Execution 1 viewer</a></li>
+                            <li><strong>IV.C (p.8):</strong> Generated algos (Algo 2): <a
+                                    href="https://luminousrobots.github.io/RoASt-Executions/Exec3_Algo2_Pole_Goals1_Main/viewer.html"
+                                    target="_blank" class="text-accent hover:underline">Execution 3 viewer</a></li>
+
+                            <li><strong>IV.D (p.8):</strong> <a
+                                    href="https://luminousrobots.github.io/RoASt-Docs/tr.pdf" target="_blank"
+                                    class="text-accent hover:underline">Technical report</a> (Section I)</li>
+
+                            <li><strong>IV.E (p.9):</strong> Classification (Algos 1 &amp; 2): <a
+                                    href="https://luminousrobots.github.io/RoASt-Executions/Exec1_Algo1_Pole_Goals1_Main/classification.html"
+                                    target="_blank" class="text-accent hover:underline">Execution 1 classification</a>,
+                                <a href="https://luminousrobots.github.io/RoASt-Executions/Exec3_Algo2_Pole_Goals1_Main/classification.html"
+                                    target="_blank" class="text-accent hover:underline">Execution 3 classification</a>
+                            </li>
+                            <li><strong>IV.E (p.9):</strong> Animation (Algos 3 &amp; 5, Exp. 3): <a
+                                    href="https://luminousrobots.github.io/RoASt-Executions/Exec3_Algo2_Pole_Goals1_Main/viewer.html?experiment=3&algorithms=0,2"
+                                    target="_blank" class="text-accent hover:underline">Execution 3 viewer</a></li>
+                            <li><strong>IV.E (p.9):</strong> Animation (Algos 3, 31, 576, Exp. 4): <a
+                                    href="https://luminousrobots.github.io/RoASt-Executions/Exec3_Algo2_Pole_Goals1_Main/viewer.html?experiment=4&algorithms=0,10,52"
+                                    target="_blank" class="text-accent hover:underline">Execution 3 viewer</a></li>
+                            <li><strong>IV.E (p.9):</strong> Animation (Algos 3 &amp; 26, Exp. 0): <a
+                                    href="https://luminousrobots.github.io/RoASt-Executions/Exec3_Algo2_Pole_Goals1_Main/viewer.html?experiment=0&algorithms=0,7"
+                                    target="_blank" class="text-accent hover:underline">Execution 3 viewer</a></li>
+
+                            <li><strong>IV.F.a (p.10):</strong> Results: <a href="executions.html#exec2"
+                                    class="text-accent hover:underline">Execution 2</a></li>
+                            <li><strong>IV.F.b (p.10):</strong> Results: <a href="executions.html#exec10"
+                                    class="text-accent hover:underline">Execution 10</a>, <a
+                                    href="executions.html#exec5" class="text-accent hover:underline">Execution 5</a>
+                            </li>
+                            <li><strong>IV.F.c (p.10):</strong> Results: <a href="executions.html#exec6"
+                                    class="text-accent hover:underline">Execution 6</a>, <a href="executions.html#exec7"
+                                    class="text-accent hover:underline">Execution 7</a></li>
+                            <li><strong>IV.F.c (p.11):</strong> Animation (Algo 188, Exp. 26): <a
+                                    href="https://luminousrobots.github.io/RoASt-Executions/Exec7_Algo2_Pole_Goals4/viewer.html?experiment=26&algorithms=37"
+                                    target="_blank" class="text-accent hover:underline">Execution 7 viewer</a></li>
+                            <li><strong>IV.F.c (p.11):</strong> Results: <a href="executions.html#exec8"
+                                    class="text-accent hover:underline">Execution 8</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Section V -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-foreground mb-2">Section V</h3>
+                        <ul class="list-disc list-inside space-y-2 text-foreground/90">
+                            <li><strong>V (p.11):</strong> Results: <a href="executions.html#exec9"
+                                    class="text-accent hover:underline">Execution 9</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Documentation -->
+                <h2 class="text-2xl font-semibold mt-10 mb-4 text-foreground border-b border-border pb-2">Documentation
+                </h2>
+                <div class="grid gap-3">
+                    <a href="getting-started.html"
+                        class="flex items-center justify-between p-4 rounded-lg border border-border hover:border-accent hover:bg-nav-active transition-colors group">
+                        <div>
+                            <h3 class="font-semibold text-foreground group-hover:text-accent transition-colors">Getting
+                                Started</h3>
+                            <p class="text-sm text-muted-foreground">Installation, configuration, and running your first
+                                execution</p>
+                        </div>
+                        <i data-lucide="arrow-right"
+                            class="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors"></i>
+                    </a>
+                    <a href="results.html"
+                        class="flex items-center justify-between p-4 rounded-lg border border-border hover:border-accent hover:bg-nav-active transition-colors group">
+                        <div>
+                            <h3 class="font-semibold text-foreground group-hover:text-accent transition-colors">
+                                Understanding Results</h3>
+                            <p class="text-sm text-muted-foreground">Quick reference for navigating execution results
+                            </p>
+                        </div>
+                        <i data-lucide="arrow-right"
+                            class="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors"></i>
+                    </a>
+                    <a href="executions.html"
+                        class="flex items-center justify-between p-4 rounded-lg border border-border hover:border-accent hover:bg-nav-active transition-colors group">
+                        <div>
+                            <h3 class="font-semibold text-foreground group-hover:text-accent transition-colors">
+                                Execution Examples</h3>
+                            <p class="text-sm text-muted-foreground">Pre-configured executions with results</p>
+                        </div>
+                        <i data-lucide="arrow-right"
+                            class="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors"></i>
+                    </a>
+                    <!--a href="appendix.html" class="flex items-center justify-between p-4 rounded-lg border border-border hover:border-accent hover:bg-nav-active transition-colors group">
+                        <div>
+                            <h3 class="font-semibold text-foreground group-hover:text-accent transition-colors">Appendix</h3>
+                            <p class="text-sm text-muted-foreground">Repository references from the research paper</p>
+                        </div>
+                        <i data-lucide="arrow-right" class="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors"></i>
+                    </a-->
+                </div>
+
+            </article>
+        </div>
+    </main>
+
+    <!-- Script for interactivity -->
+    <script src="../scripts/menu.js"></script>
+    <script>
+        loadNavigationMenu('index');
+    </script>
+</body>
+
+</html>
